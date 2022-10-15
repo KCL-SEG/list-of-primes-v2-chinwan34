@@ -3,17 +3,15 @@
 
 
 def primes(number_of_primes):
+    if number_of_primes <= 0:
+        raise ValueError
     list = []
     n = 2
-    try:
-        while len(list) != number_of_primes:
-            for i in range(2, n // 2 + 1):
-                if n % i == 0:
-                    break
-            else:
-                list.append(n)
-            n += 1
-        return list
-
-    except ValueError:
-        print("not working")
+    while len(list) != number_of_primes:
+        for i in range(2, n // 2 + 1):
+            if n % i == 0:
+                break
+        else:
+            list.append(n)
+        n += 1
+    return list
